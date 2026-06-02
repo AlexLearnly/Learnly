@@ -55,7 +55,7 @@ export default function TutorPage() {
     const matches = text.match(/\[weak: ([^\]]+)\]/g)
     if (!matches) return
     const topics = matches.map(m => m.replace('[weak: ', '').replace(']', ''))
-    const updated = [...new Set([...mistakes, ...topics])]
+    const updated = Array.from(new Set([...mistakes, ...topics]))
     setMistakes(updated)
     localStorage.setItem('learnly_mistakes', JSON.stringify(updated))
   }
