@@ -12,6 +12,9 @@ const SUBJECTS = [
   { name: 'English',     emoji: '✏️' },
   { name: 'Programming', emoji: '💻' },
   { name: 'Economics',   emoji: '📊' },
+  { name: 'French',      emoji: '🇫🇷' },
+  { name: 'Spanish',     emoji: '🇪🇸' },
+  { name: 'Chinese',     emoji: '🇨🇳' },
 ]
 
 export default function Dashboard() {
