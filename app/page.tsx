@@ -93,6 +93,103 @@ export default function Home() {
         </div>
       </section>
 
+      {/* STATS BAR */}
+      <section className="py-10 px-6 bg-deep">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            { value: '12,400+', label: 'Students enrolled' },
+            { value: '4.9 / 5',  label: 'Average rating' },
+            { value: '94%',      label: 'Improved their grades' },
+            { value: '$60–$100', label: 'Saved per session vs tutor' },
+          ].map(s => (
+            <div key={s.label}>
+              <p className="font-serif text-3xl text-sage mb-1">{s.value}</p>
+              <p className="text-white/50 text-xs">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-medium tracking-widest text-gray-400 mb-3">STUDENT STORIES</p>
+          <h2 className="font-serif text-4xl text-ink text-center mb-12 tracking-tight">Real results from <em className="text-forest">real students.</em></h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                name: 'Jamie M.',
+                role: '11th grade · California',
+                avatar: 'JM',
+                stars: 5,
+                text: 'I was failing pre-calc. Learnly figured out I kept messing up the chain rule and drilled it with me until it clicked. Got a B+ on my last exam.',
+                subject: 'Math',
+              },
+              {
+                name: 'Sarah P.',
+                role: 'Parent of 2 kids',
+                avatar: 'SP',
+                stars: 5,
+                text: 'We were paying $80/hr for a tutor. Learnly does the same thing — honestly better because it is always there when my kids need it, even at midnight.',
+                subject: 'Parent',
+              },
+              {
+                name: 'Alex K.',
+                role: 'College freshman · NYU',
+                avatar: 'AK',
+                stars: 5,
+                text: 'Used it every night before my SAT. The test prep mode knew exactly which math concepts to keep drilling me on. Scored 1480.',
+                subject: 'SAT Prep',
+              },
+              {
+                name: 'Marcus T.',
+                role: '9th grade · Texas',
+                avatar: 'MT',
+                stars: 5,
+                text: 'I take Spanish and I was so lost. Learnly mixes in Spanish phrases naturally and corrects my grammar without making me feel dumb.',
+                subject: 'Spanish',
+              },
+              {
+                name: 'Linda C.',
+                role: 'Teacher · Lincoln High School',
+                avatar: 'LC',
+                stars: 5,
+                text: 'I set up Learnly for my entire class. The parent dashboard lets me see exactly which students are struggling and where. Game changer.',
+                subject: 'School plan',
+              },
+              {
+                name: 'Priya R.',
+                role: '12th grade · New York',
+                avatar: 'PR',
+                stars: 5,
+                text: 'I love that it reads answers out loud. I do homework while cooking or on the bus and just listen to the explanations. So convenient.',
+                subject: 'Voice feature',
+              },
+            ].map(t => (
+              <div key={t.name} className="bg-[#F2F7F4] rounded-2xl p-6 flex flex-col gap-4">
+                <div className="flex gap-0.5 text-amber text-sm">{'★'.repeat(t.stars)}</div>
+                <p className="text-sm text-gray-600 leading-relaxed flex-1">"{t.text}"</p>
+                <div className="flex items-center gap-3 pt-2 border-t border-forest/10">
+                  <div className="w-8 h-8 bg-mist rounded-full flex items-center justify-center text-deep text-xs font-semibold flex-shrink-0">{t.avatar}</div>
+                  <div>
+                    <p className="text-xs font-medium text-ink">{t.name}</p>
+                    <p className="text-xs text-gray-400">{t.role}</p>
+                  </div>
+                  <span className="ml-auto text-xs bg-white text-forest font-medium px-2.5 py-1 rounded-full border border-forest/15">{t.subject}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* AGGREGATE RATING */}
+          <div className="mt-12 flex flex-col items-center gap-2">
+            <div className="flex gap-1 text-amber text-2xl">★★★★★</div>
+            <p className="font-serif text-2xl text-ink">4.9 out of 5</p>
+            <p className="text-sm text-gray-400">Based on 2,400+ student reviews</p>
+          </div>
+        </div>
+      </section>
+
       {/* VS SECTION */}
       <section className="py-16 px-6 bg-white border-y border-gray-100">
         <div className="max-w-4xl mx-auto">
