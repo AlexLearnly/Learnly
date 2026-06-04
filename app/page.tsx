@@ -99,7 +99,7 @@ export default function Home() {
           <p className="text-center text-xs font-medium tracking-widest text-gray-400 mb-10">WHY LEARNLY BEATS A PRIVATE TUTOR</p>
           <div className="grid md:grid-cols-3 gap-6 text-center">
             {[
-              { icon: '💰', title: 'Save thousands a year', body: 'The average family spends $2,000–$5,000/year on tutoring. Learnly is $144/year — that's a 95% saving.' },
+              { icon: '💰', title: 'Save thousands a year', body: 'The average family spends $2,000–$5,000/year on tutoring. Learnly is $144/year — that&apos;s a 95% saving.' },
               { icon: '🕐', title: 'Available 24/7', body: 'No scheduling, no cancellations, no waiting. Learnly is there at 11pm before a morning exam.' },
               { icon: '🧠', title: 'Never forgets your mistakes', body: 'A human tutor forgets what you struggled with last week. Learnly remembers every weak spot and comes back to it.' },
             ].map(c => (
