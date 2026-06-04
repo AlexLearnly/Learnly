@@ -106,8 +106,15 @@ export default function Home() {
       <section id="pricing" className="py-24 px-6 bg-[#F2F7F4]">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-medium tracking-widest text-sage mb-3">PRICING</p>
-          <h2 className="font-serif text-4xl text-ink mb-2 tracking-tight">Start free. Upgrade when<br /><em className="text-forest">you're ready.</em></h2>
-          <p className="text-gray-400 text-sm mb-14">No credit card required for the free tier.</p>
+          <h2 className="font-serif text-4xl text-ink mb-2 tracking-tight">Try free for 7 days.<br /><em className="text-forest">Cancel anytime.</em></h2>
+          <p className="text-gray-400 text-sm mb-6">No credit card required to start.</p>
+
+          {/* Trial banner */}
+          <div className="flex items-center justify-center gap-3 bg-deep rounded-2xl px-6 py-4 max-w-xl mx-auto mb-10 flex-wrap">
+            <span className="text-xl">🎁</span>
+            <p className="text-white text-sm font-medium text-center">Every Pro & Family plan includes a <span className="text-sage font-semibold">7-day free trial</span> — full access, no charge until day 8.</p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-5 text-left">
             {/* Free */}
             <div className="bg-white border border-forest/10 rounded-2xl p-7">
@@ -127,31 +134,52 @@ export default function Home() {
             <div className="bg-deep border-2 border-deep rounded-2xl p-7 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber text-white text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">MOST POPULAR</div>
               <p className="text-xs font-medium tracking-widest text-white/50 mb-2">PRO</p>
-              <p className="font-serif text-5xl text-white mb-1 tracking-tight">$12</p>
-              <p className="text-xs text-white/40 mb-6">per month</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                <p className="font-serif text-5xl text-white tracking-tight">$12</p>
+                <span className="text-white/40 text-sm">/ mo after trial</span>
+              </div>
+              <div className="flex items-center gap-2 mb-6">
+                <span className="bg-sage/20 text-sage text-xs font-semibold px-2.5 py-1 rounded-full">7 DAYS FREE</span>
+                <span className="text-white/40 text-xs">then $12/month</span>
+              </div>
               <ul className="space-y-3 mb-8 text-sm text-white/80">
                 {['Unlimited sessions','Full mistake memory','Test prep mode','Advanced dashboard','Priority support'].map(i => (
                   <li key={i} className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-white/10 flex items-center justify-center text-sage text-xs">✓</span>{i}</li>
                 ))}
               </ul>
               <Link href="/signup" className="block text-center bg-sage text-deep text-sm font-semibold py-3 rounded-xl hover:bg-[#74c9a0] transition-colors">
-                Start 7-day free trial
+                Start free 7-day trial →
               </Link>
+              <p className="text-xs text-white/30 text-center mt-3">No credit card required · Cancel anytime</p>
             </div>
             {/* Family */}
             <div className="bg-white border border-forest/10 rounded-2xl p-7">
               <p className="text-xs font-medium tracking-widest text-gray-400 mb-2">FAMILY</p>
-              <p className="font-serif text-5xl text-ink mb-1 tracking-tight">$29</p>
-              <p className="text-xs text-gray-400 mb-6">per month · 5 seats</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                <p className="font-serif text-5xl text-ink tracking-tight">$29</p>
+                <span className="text-gray-400 text-sm">/ mo after trial</span>
+              </div>
+              <div className="flex items-center gap-2 mb-6">
+                <span className="bg-mist text-deep text-xs font-semibold px-2.5 py-1 rounded-full">7 DAYS FREE</span>
+                <span className="text-gray-400 text-xs">up to 5 seats</span>
+              </div>
               <ul className="space-y-3 mb-8 text-sm text-gray-600">
                 {['Everything in Pro','Up to 5 profiles','Parent dashboard','Bulk pricing available'].map(i => (
                   <li key={i} className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-mist flex items-center justify-center text-forest text-xs">✓</span>{i}</li>
                 ))}
               </ul>
               <Link href="/signup" className="block text-center border border-forest/30 text-forest text-sm font-medium py-3 rounded-xl hover:bg-mist transition-colors">
-                Contact us
+                Start free 7-day trial →
               </Link>
+              <p className="text-xs text-gray-400 text-center mt-3">No credit card required · Cancel anytime</p>
             </div>
+          </div>
+
+          {/* Reassurance */}
+          <div className="flex justify-center gap-8 flex-wrap mt-8">
+            {['✓ No credit card needed','✓ Cancel before day 8, pay nothing','✓ Full Pro access from day one'].map(r => (
+              <span key={r} className="text-sm text-gray-400">{r}</span>
+            ))}
           </div>
         </div>
       </section>
