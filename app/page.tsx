@@ -23,26 +23,42 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,#D8F3DC,transparent)] pointer-events-none" />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-mist text-deep text-xs font-medium px-4 py-2 rounded-full mb-8 animate-fade-up">
-            <span className="w-1.5 h-1.5 bg-sage rounded-full" />
-            Now in early access
+
+          {/* VALUE PROP BADGE */}
+          <div className="inline-flex items-center gap-2 bg-amber/10 border border-amber/30 text-amber-800 text-xs font-semibold px-4 py-2 rounded-full mb-6 animate-fade-up">
+            💸 Private tutors cost $60–$100/hr. Learnly costs $12/month.
           </div>
+
           <h1 className="font-serif text-5xl md:text-7xl text-ink leading-[1.08] tracking-tight mb-6 animate-fade-up" style={{animationDelay:'0.1s'}}>
-            The tutor that<br /><em className="text-forest">learns you.</em>
+            Your personal tutor.<br /><em className="text-forest">Without the price tag.</em>
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 font-light max-w-xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{animationDelay:'0.2s'}}>
-            Learnly adapts to how you study — tracking mistakes, reinforcing weak spots, and helping you actually understand the material.
+          <p className="text-lg md:text-xl text-gray-400 font-light max-w-xl mx-auto mb-8 leading-relaxed animate-fade-up" style={{animationDelay:'0.2s'}}>
+            Learnly replaces expensive tutors with AI that remembers your mistakes, adapts to how you learn, and is available 24/7 — for less than a single tutoring session.
           </p>
+
+          {/* PRICE COMPARISON */}
+          <div className="flex items-center justify-center gap-4 mb-8 flex-wrap animate-fade-up" style={{animationDelay:'0.25s'}}>
+            <div className="flex items-center gap-2 bg-red-50 border border-red-100 px-4 py-2.5 rounded-xl">
+              <span className="text-sm line-through text-red-400 font-medium">$60–$100/hr</span>
+              <span className="text-xs text-red-400">private tutor</span>
+            </div>
+            <span className="text-gray-300 font-light text-xl">→</span>
+            <div className="flex items-center gap-2 bg-mist border border-forest/20 px-4 py-2.5 rounded-xl">
+              <span className="text-sm text-forest font-bold">$12/month</span>
+              <span className="text-xs text-forest/70">with Learnly</span>
+            </div>
+          </div>
+
           <div className="flex items-center justify-center gap-3 flex-wrap animate-fade-up" style={{animationDelay:'0.3s'}}>
             <Link href="/signup" className="bg-forest text-white font-medium px-8 py-3.5 rounded-xl hover:bg-deep transition-all hover:-translate-y-0.5 text-sm">
-              Start for free
+              Try free for 7 days →
             </Link>
             <a href="#features" className="text-gray-600 border border-gray-200 px-6 py-3.5 rounded-xl hover:border-forest hover:bg-mist transition-all text-sm">
               See how it works
             </a>
           </div>
-          <p className="text-xs text-gray-400 mt-6 animate-fade-up" style={{animationDelay:'0.4s'}}>
-            No credit card required
+          <p className="text-xs text-gray-400 mt-4 animate-fade-up" style={{animationDelay:'0.4s'}}>
+            No credit card required · Cancel anytime
           </p>
         </div>
 
@@ -73,6 +89,49 @@ export default function Home() {
                 <span key={d} className="w-1.5 h-1.5 bg-sage rounded-full animate-bounce-dot" style={{animationDelay:`${d}ms`}} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VS SECTION */}
+      <section className="py-16 px-6 bg-white border-y border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-xs font-medium tracking-widest text-gray-400 mb-10">WHY LEARNLY BEATS A PRIVATE TUTOR</p>
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            {[
+              { icon: '💰', title: 'Save thousands a year', body: 'The average family spends $2,000–$5,000/year on tutoring. Learnly is $144/year — that's a 95% saving.' },
+              { icon: '🕐', title: 'Available 24/7', body: 'No scheduling, no cancellations, no waiting. Learnly is there at 11pm before a morning exam.' },
+              { icon: '🧠', title: 'Never forgets your mistakes', body: 'A human tutor forgets what you struggled with last week. Learnly remembers every weak spot and comes back to it.' },
+            ].map(c => (
+              <div key={c.title} className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-[#F2F7F4]">
+                <span className="text-3xl">{c.icon}</span>
+                <h3 className="font-medium text-ink text-sm">{c.title}</h3>
+                <p className="text-xs text-gray-400 leading-relaxed">{c.body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* COMPARISON TABLE */}
+          <div className="mt-10 rounded-2xl overflow-hidden border border-gray-100">
+            <div className="grid grid-cols-3 bg-gray-50 px-6 py-3 text-xs font-medium text-gray-400 tracking-widest">
+              <span></span>
+              <span className="text-center">Private Tutor</span>
+              <span className="text-center text-forest">Learnly</span>
+            </div>
+            {[
+              { label: 'Cost',              tutor: '$60–$100/hr',    learnly: '$12/month' },
+              { label: 'Available',         tutor: '1–2 hrs/week',   learnly: '24/7 unlimited' },
+              { label: 'Remembers mistakes',tutor: 'Sometimes',      learnly: 'Always' },
+              { label: 'All subjects',      tutor: 'Usually 1–2',    learnly: '9 subjects' },
+              { label: 'Photo problems',    tutor: 'In person only',  learnly: 'Yes, instantly' },
+              { label: 'Voice explanations',tutor: 'Yes',            learnly: 'Yes' },
+            ].map((r, i) => (
+              <div key={r.label} className={`grid grid-cols-3 px-6 py-3.5 text-sm border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+                <span className="text-gray-500 font-medium text-xs">{r.label}</span>
+                <span className="text-center text-gray-400 text-xs">{r.tutor}</span>
+                <span className="text-center text-forest font-semibold text-xs">{r.learnly}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
