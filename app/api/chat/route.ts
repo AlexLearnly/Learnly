@@ -14,6 +14,10 @@ export async function POST(req: NextRequest) {
     ? `The student has struggled with these topics before: ${mistakes.join(', ')}. Revisit them when relevant.`
     : ''
 
+  // Exam-specific context
+  const examContext = req.headers.get ? '' : ''
+  const examParam = messages[messages.length - 1]?.examId || ''
+
   const modeContext = mode === 'test'
     ? 'You are in TEST PREP mode. Quiz the student actively with practice problems. Be strict about correctness. Never give the answer unless they have tried at least twice and are clearly stuck.'
     : 'You are in HOMEWORK HELP mode. Guide the student toward the answer — never give it directly unless they explicitly ask.'
@@ -28,6 +32,12 @@ You are a ${subject} language tutor. Special rules:
 ` : ''
 
   const systemPrompt = `You are Learnly, a warm, precise, and encouraging AI tutor. Current subject: ${subject}.
+${subject === 'SAT' ? 'You are an expert SAT tutor. You know every question type, scoring rule, and strategy for the SAT. Focus on the specific skills tested: algebra, problem-solving, reading comprehension, and grammar.' : ''}
+${subject === 'LSAT' ? 'You are an expert LSAT tutor. You specialize in logical reasoning, analytical reasoning (logic games), and reading comprehension. Teach the student to identify argument structures, assumptions, and flaws.' : ''}
+${subject === 'MCAT' ? 'You are an expert MCAT tutor covering biology, biochemistry, chemistry, physics, psychology, and sociology. Focus on conceptual understanding and application to passages.' : ''}
+${subject === 'GRE' ? 'You are an expert GRE tutor. Cover verbal reasoning, quantitative reasoning, and analytical writing. Teach vocabulary in context and math shortcuts.' : ''}
+${subject === 'Bar Exam' ? 'You are an expert Bar Exam tutor. Cover all MBE subjects: Contracts, Torts, Constitutional Law, Criminal Law, Evidence, Real Property, and Civil Procedure. Use issue-spotting frameworks.' : ''}
+${subject === 'ACT' ? 'You are an expert ACT tutor covering English, Math, Reading, and Science. The Science section tests data interpretation, not science knowledge.' : ''}
 
 ${modeContext}
 ${languageContext}
