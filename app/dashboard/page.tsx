@@ -183,6 +183,13 @@ export default function Dashboard() {
               )}
             </div>
 
+            {/* TEST PREP SHORTCUT */}
+            <Link href="/test-prep" className="bg-amber/10 border border-amber/20 rounded-2xl p-5 block hover:bg-amber/20 transition-colors">
+              <p className="text-amber-800 font-medium text-sm mb-1 flex items-center gap-2"><span>🎯</span> Test Prep Center</p>
+              <p className="text-amber-700/60 text-xs mb-3">SAT, LSAT, MCAT, Bar Exam, GRE and more.</p>
+              <span className="text-xs font-semibold text-amber-800">Browse all exams →</span>
+            </Link>
+
             {/* QUICK START */}
             <div className="bg-forest rounded-2xl p-5">
               <p className="text-white font-medium text-sm mb-1">Continue where you left off</p>
